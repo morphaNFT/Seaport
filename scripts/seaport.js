@@ -12,8 +12,8 @@ async function main() {
     console.log("【ConduitController address】:", ConduitController.address);
 
     // init conduit
-    const conduitKey = "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492000000000000000000000000"
-    const initialOwner = "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492"
+    const conduitKey = await deployer.getAddress() + "000000000000000000000000"
+    const initialOwner = await deployer.getAddress()
     await ConduitController.createConduit(conduitKey, initialOwner)
     const conduitAddress = await ConduitController.getConduit(conduitKey);
     console.log("【create conduit 】:", conduitAddress[0])
