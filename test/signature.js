@@ -108,7 +108,7 @@ module.exports = {
             ],
             startTime: "1665557877",
             endTime: "1668236277",
-            orderType: 0,
+            orderType: 0,   // FULL_OPEN
             zone: "0x0000000000000000000000000000000000000000",
             zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
             salt: "",
@@ -188,5 +188,82 @@ module.exports = {
             }
         }
         return parseInt(result.reverse().join(''))
-    }
+    },
+
+    getOfferData1155: function () {
+        return {
+            price: "30000000000000000",
+            offerer: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
+            offer: [
+                {
+                    itemType: 3,                 // 0 ETH 1 ERC20 2 ERC721
+                    token: "0xcD9AE776C6B0f95A882dA7306319a3BEE3Ef3a8F",                   // NFT 合约地址
+                    identifierOrCriteria: 0,     // tokenId or root merkel root
+                    startAmount: 10,              // 数量
+                    endAmount: 10                 // 数量
+                }
+            ],
+            consideration: [
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '9250000000000000',
+                    endAmount: '9250000000000000',
+                    recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
+                },
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '250000000000000',
+                    endAmount: '250000000000000',
+                    recipient: "0x00EE50f5CD1560aA685432BC91Fc872B274d19a2"
+                },
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '500000000000000',
+                    endAmount: '500000000000000',
+                    recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492"
+                }
+            ],
+            startTime: "1665557877",
+            endTime: "1668236277",
+            orderType: 1,   // PARTIAL_OPEN
+            zone: "0x0000000000000000000000000000000000000000",
+            zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+            counter: 0
+        }
+    },
+
+    getTransactionInputData1155: function (offerData, salt, signature, conduitKey) {
+        return {
+            "advancedOrder": {
+                "denominator": "10",
+                "extraData": "0x",
+                "numerator": "5",
+                "parameters": {
+                    "conduitKey": conduitKey,
+                    "consideration": offerData.consideration,
+                    "endTime": offerData.endTime,
+                    "offer": offerData.offer,
+                    "offerer": offerData.offerer,
+                    "orderType": offerData.orderType,
+                    "salt": salt,
+                    "startTime": offerData.startTime,
+                    "totalOriginalConsiderationItems": offerData.consideration.length.toString(),
+                    "zone": offerData.zone,
+                    "zoneHash": offerData.zoneHash
+                },
+                "signature": signature
+            },
+            "criteriaResolvers": [],
+            "fulfillerConduitKey": conduitKey,
+            "recipient": "0x0000000000000000000000000000000000000000"
+        }
+    },
+
+
 }

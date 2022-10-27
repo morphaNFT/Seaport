@@ -7,7 +7,7 @@ const config = require("../config.json")
 
 
 
-describe("【【seaport contract test】】", function () {
+describe("【【seaport contract test 721】】", function () {
     describe("fulfillBasicOrder", function () {
         it("fulfillBasicOrder true", async function () {
             const [sellSigner, buySigner] = await ethers.getSigners();
