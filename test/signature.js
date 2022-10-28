@@ -69,12 +69,12 @@ module.exports = {
     },
     getOfferData721: function () {
         return {
-            price: "100000000000000000",
+            price: "10000000000000000",
             offerer: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
             offer: [
                 {
                     itemType: 2,                 // 0 ETH 1 ERC20 2 ERC721
-                    token: "0x4c9c4c269dd1d3cd970647b64a232f343198bfca",                   // NFT 合约地址
+                    token: "0x22A3B15271635f2a40B730320d03e167a8eDe220",                   // NFT 合约地址
                     identifierOrCriteria: 0,     // tokenId or root merkel root
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
@@ -112,12 +112,11 @@ module.exports = {
             zone: "0x0000000000000000000000000000000000000000",
             zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
             salt: "",
-            // conduitKey: "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
             counter: 0
         }
     },
 
-    getTransactionInputData721: function (offerData, salt, signature, conduitKey) {
+    fulfillBasicOrder: function (offerData, salt, signature, conduitKey) {
         let additionalRecipients = []
         if (offerData.consideration.length > 1) {
             for (let i = 1; i < offerData.consideration.length; i++) {
@@ -192,15 +191,15 @@ module.exports = {
 
     getOfferData1155: function () {
         return {
-            price: "30000000000000000",
+            price: "20000000000000000",
             offerer: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
             offer: [
                 {
-                    itemType: 3,                 // 0 ETH 1 ERC20 2 ERC721
+                    itemType: "3",                 // 0 ETH 1 ERC20 2 ERC721 3 ERC1155
                     token: "0xcD9AE776C6B0f95A882dA7306319a3BEE3Ef3a8F",                   // NFT 合约地址
-                    identifierOrCriteria: 0,     // tokenId or root merkel root
-                    startAmount: 10,              // 数量
-                    endAmount: 10                 // 数量
+                    identifierOrCriteria: 1,     // tokenId or root merkel root
+                    startAmount: "10",              // 数量
+                    endAmount: "10"                 // 数量
                 }
             ],
             consideration: [
@@ -238,7 +237,7 @@ module.exports = {
         }
     },
 
-    getTransactionInputData1155: function (offerData, salt, signature, conduitKey) {
+    fulfillAdvancedOrder: function (offerData, salt, signature, conduitKey) {
         return {
             "advancedOrder": {
                 "denominator": "10",
@@ -265,5 +264,96 @@ module.exports = {
         }
     },
 
-
+    fulfillAvailableAdvancedOrders: function (offerData721, offerData1155, conduitKey) {
+        return {
+            "advancedOrders": [
+                {
+                    "denominator": "1",
+                    "extraData": "0x",
+                    "numerator": "1",
+                    "parameters": {
+                        "conduitKey": conduitKey,
+                        "consideration": offerData721.consideration,
+                        "endTime": offerData721.endTime,
+                        "offer": offerData721.offer,
+                        "offerer": offerData721.offerer,
+                        "orderType": offerData721.orderType,
+                        "salt": offerData721.salt,
+                        "startTime": offerData721.startTime,
+                        "totalOriginalConsiderationItems": offerData721.consideration.length.toString(),
+                        "zone": offerData721.zone,
+                        "zoneHash": offerData721.zoneHash
+                    },
+                    "signature": offerData721.signature
+                },
+                {
+                    "denominator": "10",
+                    "extraData": "0x",
+                    "numerator": "2",
+                    "parameters": {
+                        "conduitKey": conduitKey,
+                        "consideration": offerData1155.consideration,
+                        "endTime": offerData1155.endTime,
+                        "offer": offerData1155.offer,
+                        "offerer": offerData1155.offerer,
+                        "orderType": offerData1155.orderType,
+                        "salt": offerData1155.salt,
+                        "startTime": offerData1155.startTime,
+                        "totalOriginalConsiderationItems": offerData1155.consideration.length.toString(),
+                        "zone": offerData1155.zone,
+                        "zoneHash": offerData1155.zoneHash
+                    },
+                    "signature": offerData1155.signature
+                }
+            ],
+            "criteriaResolvers": [],
+            "offerFulfillments": [
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "0"
+                    }
+                ],
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "1"
+                    }
+                ]
+            ],
+            "considerationFulfillments": [
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "0"
+                    },
+                    {
+                        "itemIndex": "2",
+                        "orderIndex": "0"
+                    },
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "1"
+                    },
+                    {
+                        "itemIndex": "2",
+                        "orderIndex": "1"
+                    }
+                ],
+                [
+                    {
+                        "itemIndex": "1",
+                        "orderIndex": "0"
+                    },
+                    {
+                        "itemIndex": "1",
+                        "orderIndex": "1"
+                    }
+                ]
+            ],
+            "fulfillerConduitKey": conduitKey,
+            "recipient": "0x0000000000000000000000000000000000000000",
+            "maximumFulfilled": "2"
+        }
+    }
 }

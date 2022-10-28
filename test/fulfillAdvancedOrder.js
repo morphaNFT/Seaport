@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const {getSignatureData, makeOrderSalt, getOfferData1155, getTransactionInputData1155} = require("./signature");
+const {getSignatureData, makeOrderSalt, getOfferData1155, fulfillAdvancedOrder} = require("./signature");
 const {Contract} = require("ethers");
 const {abi1155} = require("./abi/ERC1155.json")
 const {abi} = require("../artifacts/contracts/Seaport.sol/Seaport.json")
@@ -35,7 +35,7 @@ describe("【【seaport contract test 1155】】", function () {
             // signature = "0x1c6657bc7661c94b29458b137e41ebbb0dfdc1e53f4bcb8ecabbafb7f264f7df31f99bb48ce3d2d040140fa309b4705a630b4cfad2149574f44f6c1e1719e4b01c"
             // salt = "53831889355276379944314786763478960796829837246325694460708211809927873791297"
 
-            const inputData = getTransactionInputData1155(offerData, salt, signature, config.seaport_xsc_main.conduitKey)
+            const inputData = fulfillAdvancedOrder(offerData, salt, signature, config.seaport_xsc_main.conduitKey)
             console.log("inputData", inputData)
             const options = {value: offerData.price}
             console.log("options",options)

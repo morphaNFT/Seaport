@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const {getOfferData721, getSignatureData, getTransactionInputData721, addBigNum, makeOrderSalt} = require("./signature");
+const {getOfferData721, getSignatureData, fulfillBasicOrder, addBigNum, makeOrderSalt} = require("./signature");
 const {Contract} = require("ethers");
 const {abi721} = require("./abi/ERC721.json")
 const {abi} = require("../artifacts/contracts/Seaport.sol/Seaport.json")
@@ -30,7 +30,7 @@ describe("【【seaport contract test 721】】", function () {
             const signature = await sellSigner._signTypedData(signatureData[0], signatureData[1], signatureData[2])
             console.log("signature", signature)
             // fulfillBasicOrder方法inputData
-            const inputData = getTransactionInputData721(offerData, salt, signature, config.seaport_xsc_main.conduitKey)
+            const inputData = fulfillBasicOrder(offerData, salt, signature, config.seaport_xsc_main.conduitKey)
             console.log("inputData", inputData)
             const options = {value: offerData.price}
             console.log("options",options)
