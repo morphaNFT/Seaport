@@ -1,0 +1,102 @@
+sell : 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+
+NFT:  
+	合约地址：0x9e6a84f36b9def7c5d857a504318ad0775ad370d   （721）
+	TokenId：0
+	Price：0.01 ETH
+
+签名数据：
+
+	offerer: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+	offer:
+	  0:
+		itemType: 2                                              // 0 ETH 1 ERC20 2 ERC721 3 ERC1155
+		token: 0x9E6a84f36B9dEF7c5D857A504318Ad0775Ad370d        // NFT 合约地址
+		identifierOrCriteria: 0  // TokenId
+		startAmount: 1       // 数量                                   
+		endAmount: 1
+	consideration:
+	  0:                                                         
+		itemType: 1                                              // ERC20交易
+		token: 0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa
+		identifierOrCriteria: 0
+		startAmount: 9750000000000000
+		endAmount: 9750000000000000
+		recipient: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+	  1: 
+	  	itemType: 1
+		token: 0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa
+		identifierOrCriteria: 0
+		startAmount: 250000000000000
+		endAmount: 250000000000000
+		recipient: 0x0000a26b00c1F0DF003000390027140000fAa719
+	startTime: 1665470301
+	endTime: 1668148701
+	orderType: 0
+	zone: 0x0000000000000000000000000000000000000000
+	zoneHash: 0x0000000000000000000000000000000000000000000000000000000000000000
+	salt: 24446860302761739304752683030156737591518664810215442929818019512536257715948
+	conduitKey: 0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+	counter: 0               // 计数器，要与offerer的计数器相同
+
+
+
+	======================================================================================================================================
+
+	Sell : 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+	Price: 0.01 ETH
+	Contract: 0xffe1a37eb26fca6ec4061bd2fdbf0bdcdd184a5a
+	TokenId: 0
+
+	
+	## SetApprovalForAll （合约地址：0xffe1a37eb26fca6ec4061bd2fdbf0bdcdd184a5a）
+
+	### 交易Hash
+	0xeded268e7b51e74b0af3bf434401fcd03b7a249bf2b105f384d9dee84338608f
+
+	### input
+	0xa22cb465
+	0000000000000000000000001e0049783f008a0085193e00003d00cd54003c71   // conduit address
+	0000000000000000000000000000000000000000000000000000000000000001
+
+
+	## 签名
+
+	offerer: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+	offer:
+			0:
+				itemType: 2
+				token: 0xfFe1A37eB26FCA6EC4061bd2FdBf0bDCdd184a5a
+				identifierOrCriteria: 0
+				startAmount: 1
+				endAmount: 1
+	consideration:
+			0:
+				itemType: 0
+				token: 0x0000000000000000000000000000000000000000
+				identifierOrCriteria: 0
+				startAmount: 9250000000000000
+				endAmount: 9250000000000000
+				recipient: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+			1:
+				itemType: 0
+				token: 0x0000000000000000000000000000000000000000
+				identifierOrCriteria: 0
+				startAmount: 250000000000000
+				endAmount: 250000000000000
+				recipient: 0x0000a26b00c1F0DF003000390027140000fAa719
+			2:
+				itemType: 0
+				token: 0x0000000000000000000000000000000000000000
+				identifierOrCriteria: 0
+				startAmount: 500000000000000
+				endAmount: 500000000000000
+				recipient: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492
+	startTime: 1665557877
+	endTime: 1668236277
+	orderType: 0
+	zone: 0x0000000000000000000000000000000000000000
+	zoneHash: 0x0000000000000000000000000000000000000000000000000000000000000000
+	salt: 24446860302761739304752683030156737591518664810215442929812185200583644583807
+	conduitKey: 0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000
+	counter: 0

@@ -1,0 +1,241 @@
+
+Transaction Hash:		0xdc0b58b46404e882f2f107fb5899964096fb2f27891e4aa828841fee35a04a61
+
+Function:				fulfillAvailableAdvancedOrders()
+
+NFT1: 
+		合约：0xffe1a37eb26fca6ec4061bd2fdbf0bdcdd184a5a  
+		tokenId: 0  
+		购买数量 1  
+		类型：erc721
+		价格：0.0001ETH
+		owner：0x8a8ee995fce4e30ecf6627a9d06409766d4d1492
+		版权费：5%
+
+NFT2：  合约：0xf4910c763ed4e47a585e2d34baa9a4b611ae448c  
+		tokenId:  62671677538253003905271964663573401948215575374180708078282869094311262158858 
+		购买数量：2  （上架5个）
+		类型：erc1155
+		价格：0.0001 ETH/个
+		owner：0x8a8ee995fce4e30ecf6627a9d06409766d4d1492
+		版权费：5%
+
+
+
+
+##  inputData
+
+{
+  "advancedOrders": [
+    {
+      "denominator": "1",
+      "extraData": "0x",
+      "numerator": "1",
+      "parameters": {
+        "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+        "consideration": [
+          {
+            "endAmount": "92500000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+            "startAmount": "92500000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          },
+          {
+            "endAmount": "2500000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "startAmount": "2500000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          },
+          {
+            "endAmount": "5000000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+            "startAmount": "5000000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          }
+        ],
+        "endTime": "1669601275",
+        "offer": [
+          {
+            "endAmount": "1",
+            "identifierOrCriteria": "0",
+            "itemType": 2,
+            "startAmount": "1",
+            "token": "0xffe1a37eb26fca6ec4061bd2fdbf0bdcdd184a5a"
+          }
+        ],
+        "offerer": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+        "orderType": 0,
+        "salt": "24446860302761739304752683030156737591518664810215442929802431838706447029852",
+        "startTime": "1666922875",
+        "totalOriginalConsiderationItems": "3",
+        "zone": "0x0000000000000000000000000000000000000000",
+        "zoneHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "signature": "0x1e3c48ec83cf606c82dee7fa7a5e058f8ff62aede8538edc9696e93d65325bcd08ed404799600a4545ea379c0fe7a2f464864c71e6ffcb855f5eb4e61da557a21b"
+    },
+    {
+      "denominator": "5",
+      "extraData": "0x",
+      "numerator": "2",
+      "parameters": {
+        "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+        "consideration": [
+          {
+            "endAmount": "462500000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+            "startAmount": "462500000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          },
+          {
+            "endAmount": "12500000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+            "startAmount": "12500000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          },
+          {
+            "endAmount": "25000000000000",
+            "identifierOrCriteria": "0",
+            "itemType": 0,
+            "recipient": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+            "startAmount": "25000000000000",
+            "token": "0x0000000000000000000000000000000000000000"
+          }
+        ],
+        "endTime": "1669601532",
+        "offer": [
+          {
+            "endAmount": "5",
+            "identifierOrCriteria": "62671677538253003905271964663573401948215575374180708078282869094311262158858",
+            "itemType": 3,
+            "startAmount": "5",
+            "token": "0x804159144aefb1dc17b171afcefa5b33746c722f"
+          }
+        ],
+        "offerer": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+        "orderType": 1,
+        "salt": "24446860302761739304752683030156737591518664810215442929802335827684310992293",
+        "startTime": "1666923132",
+        "totalOriginalConsiderationItems": "3",
+        "zone": "0x0000000000000000000000000000000000000000",
+        "zoneHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "signature": "0x503dbc0bfa15d01bdaf1c2051555fb1d97b68e47c4613750e7c039821a28095a569c79783a759f0bad70b71bfd8937878e953f2c366b677817c2079bf96aaa3d1b"
+    }
+  ],
+  "criteriaResolvers": null,
+  "offerFulfillments": [     // NFT在订单中的位置 
+    [
+      {
+        "itemIndex": "0",    // 第一个NFT
+        "orderIndex": "0"    // 第一个订单  
+      }
+    ],
+    [
+      {
+        "itemIndex": "0",    // 第一个NFT
+        "orderIndex": "1"	 // 第二个订单
+      }
+    ]
+  ],
+  "considerationFulfillments": [    // 代币接收者在订单中的位置
+    [                               // 0x8a8ee995fce4e30ecf6627a9d06409766d4d1492
+      {
+        "itemIndex": "0",             第1个订单第1个位置 
+        "orderIndex": "0"
+      },
+      {
+        "itemIndex": "2",              第1个订单第3个位置
+        "orderIndex": "0"
+      },
+      {
+        "itemIndex": "0",             第2个订单第1个位置
+        "orderIndex": "1"
+      },
+      {
+        "itemIndex": "2",			第2个订单第3个位置
+        "orderIndex": "1"
+      }
+    ],
+    [							//  0x0000a26b00c1f0df003000390027140000faa719
+      {
+        "itemIndex": "1",       // 第1个订单第2个位置
+        "orderIndex": "0"
+      },
+      {
+        "itemIndex": "1",		// 第2个订单第2个位置
+        "orderIndex": "1"
+      }
+    ]
+  ],
+  "fulfillerConduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+  "recipient": "0x0000000000000000000000000000000000000000",
+  "maximumFulfilled": "2"
+}
+
+
+
+## outputData
+
+
+{
+  "availableOrders": [
+    true,
+    true
+  ],
+  "executions": [
+    {
+      "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+      "item": {
+        "amount": "1",
+        "identifier": "0",
+        "itemType": 2,
+        "recipient": "0x247098dffc21a8a6a6a62d1461c36b54b1db92fa",
+        "token": "0xffe1a37eb26fca6ec4061bd2fdbf0bdcdd184a5a"
+      },
+      "offerer": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492"
+    },
+    {
+      "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+      "item": {
+        "amount": "2",
+        "identifier": "62671677538253003905271964663573401948215575374180708078282869094311262158858",
+        "itemType": 3,
+        "recipient": "0x247098dffc21a8a6a6a62d1461c36b54b1db92fa",
+        "token": "0x804159144aefb1dc17b171afcefa5b33746c722f"
+      },
+      "offerer": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492"
+    },
+    {
+      "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+      "item": {
+        "amount": "292500000000000",
+        "identifier": "0",
+        "itemType": 0,
+        "recipient": "0x8a8ee995fce4e30ecf6627a9d06409766d4d1492",
+        "token": "0x0000000000000000000000000000000000000000"
+      },
+      "offerer": "0x247098dffc21a8a6a6a62d1461c36b54b1db92fa"
+    },
+    {
+      "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+      "item": {
+        "amount": "7500000000000",
+        "identifier": "0",
+        "itemType": 0,
+        "recipient": "0x0000a26b00c1f0df003000390027140000faa719",
+        "token": "0x0000000000000000000000000000000000000000"
+      },
+      "offerer": "0x247098dffc21a8a6a6a62d1461c36b54b1db92fa"
+    }
+  ]
+}
