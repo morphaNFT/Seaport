@@ -16,9 +16,8 @@ module.exports = {
     },
     xsc_maint: {
       url: `https://datarpc3.xsc.pub`,
-      accounts: [`0x${config.common.privateKey}`,`0x${config.common.privateKey_92Fa}`],
-      gas: 2100000,
-      // gasPrice: 8000000000,
+      accounts: [`0x${config.common.privateKey}`,`0x${config.common.privateKey_92Fa}`, `0x${config.common.privateKey_19a2}`],
+      gas: 6000000
     },
     goerli: {
       url: `https://goerli.infura.io/v3/a79783854b0f446a8a74e513996a58d7`,

@@ -74,7 +74,7 @@ module.exports = {
             offer: [
                 {
                     itemType: 2,                 // 0 ETH 1 ERC20 2 ERC721
-                    token: "0x22A3B15271635f2a40B730320d03e167a8eDe220",                   // NFT 合约地址
+                    token: "0x01B9A755a825Ee508AA689E39BDa351dD92c98ED",                   // NFT 合约地址
                     identifierOrCriteria: 0,     // tokenId or root merkel root
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
@@ -115,6 +115,56 @@ module.exports = {
             counter: 0
         }
     },
+
+    getOfferData721Other: function () {
+        return {
+            price: "10000000000000000",
+            offerer: "0x247098dFFc21a8A6A6A62d1461C36B54b1db92Fa",
+            offer: [
+                {
+                    itemType: 2,                 // 0 ETH 1 ERC20 2 ERC721
+                    token: "0x01B9A755a825Ee508AA689E39BDa351dD92c98ED",                   // NFT 合约地址
+                    identifierOrCriteria: 1,     // tokenId or root merkel root
+                    startAmount: 1,              // 数量
+                    endAmount: 1                 // 数量
+                }
+            ],
+            consideration: [
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '9250000000000000',
+                    endAmount: '9250000000000000',
+                    recipient: "0x247098dFFc21a8A6A6A62d1461C36B54b1db92Fa",
+                },
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '250000000000000',
+                    endAmount: '250000000000000',
+                    recipient: "0x00EE50f5CD1560aA685432BC91Fc872B274d19a2"
+                },
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '500000000000000',
+                    endAmount: '500000000000000',
+                    recipient: "0x247098dFFc21a8A6A6A62d1461C36B54b1db92Fa"
+                }
+            ],
+            startTime: "1665557877",
+            endTime: "1668236277",
+            orderType: 0,   // FULL_OPEN
+            zone: "0x0000000000000000000000000000000000000000",
+            zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
+            salt: "",
+            counter: 0
+        }
+    },
+
 
     fulfillBasicOrder: function (offerData, salt, signature, conduitKey) {
         let additionalRecipients = []
@@ -355,5 +405,96 @@ module.exports = {
             "recipient": "0x0000000000000000000000000000000000000000",
             "maximumFulfilled": "2"
         }
+    },
+
+    fulfillAvailableOrders: function (offerData721, offerDataOther, conduitKey) {
+        return {
+            "orders": [
+                {
+                    "parameters": {
+                        "conduitKey": conduitKey,
+                        "consideration": offerData721.consideration,
+                        "endTime": offerData721.endTime,
+                        "offer": offerData721.offer,
+                        "offerer": offerData721.offerer,
+                        "orderType": offerData721.orderType,
+                        "salt": offerData721.salt,
+                        "startTime": offerData721.startTime,
+                        "totalOriginalConsiderationItems": offerData721.consideration.length.toString(),
+                        "zone": offerData721.zone,
+                        "zoneHash": offerData721.zoneHash
+                    },
+                    "signature": offerData721.signature
+                },
+                {
+                    "parameters": {
+                        "conduitKey": conduitKey,
+                        "consideration": offerDataOther.consideration,
+                        "endTime": offerDataOther.endTime,
+                        "offer": offerDataOther.offer,
+                        "offerer": offerDataOther.offerer,
+                        "orderType": offerDataOther.orderType,
+                        "salt": offerDataOther.salt,
+                        "startTime": offerDataOther.startTime,
+                        "totalOriginalConsiderationItems": offerDataOther.consideration.length.toString(),
+                        "zone": offerDataOther.zone,
+                        "zoneHash": offerDataOther.zoneHash
+                    },
+                    "signature": offerDataOther.signature
+                }
+            ],
+            "offerFulfillments": [
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "0"
+                    }
+                ],
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "1"
+                    }
+                ]
+            ],
+            "considerationFulfillments": [
+                //  0x8a8ee995fce4e30ecf6627a9d06409766d4d1492  卖家1
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "0"
+                    },
+                    {
+                        "itemIndex": "2",
+                        "orderIndex": "0"
+                    },
+                ],
+                //  0x00EE50f5CD1560aA685432BC91Fc872B274d19a2  平台费
+                [
+                    {
+                        "itemIndex": "1",
+                        "orderIndex": "0"
+                    },
+                    {
+                        "itemIndex": "1",
+                        "orderIndex": "1"
+                    }
+                ],
+                // 0x247098dffc21a8a6a6a62d1461c36b54b1db92fa  卖家2
+                [
+                    {
+                        "itemIndex": "0",
+                        "orderIndex": "1"
+                    },
+                    {
+                        "itemIndex": "2",
+                        "orderIndex": "1"
+                    },
+                ]
+            ],
+            "fulfillerConduitKey": conduitKey,
+            "maximumFulfilled": "2"
+        }
     }
+
 }

@@ -2,7 +2,8 @@
   "common": {
     "privateKey": "b1581af51a3004424ca96bf818b40830c5b53464b425ac0dceb73a20533ce0b9",
     "privateKey_maint": "e1b25546f4c887ec31ef5ce0c8cfe7245dc0da95d66497a864417bf5fcbb4790",
-    "privateKey_92Fa": "e48442098d5c7c8931c76f01fc0a7bebd55b639839951e2e2cedd348639a615c"
+    "privateKey_92Fa": "e48442098d5c7c8931c76f01fc0a7bebd55b639839951e2e2cedd348639a615c",
+    "privateKey_19a2": "c2743a9bd54900170053d17f0173584f5988423cf41c05520fcd4fb6088154a1"
   },
   "seaport_xsc_main": {
     "ConduitController" : "0xA001326C26B7871B5362c61555e51e5A9B67467B",
