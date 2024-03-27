@@ -69,50 +69,50 @@ module.exports = {
     },
     getOfferData721: function () {
         return {
-            price: "10000000000000000",
+            price: "1000000000000000",
             offerer: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
             offer: [
                 {
-                    itemType: 2,                 // 0 ETH 1 ERC20 2 ERC721
-                    token: "0x01B9A755a825Ee508AA689E39BDa351dD92c98ED",                   // NFT 合约地址
-                    identifierOrCriteria: 0,     // tokenId or root merkel root
+                    itemType: 2,                 // 2: ERC721 3: ERC1155
+                    token: "0x8eF5333810401C3A8b930949f41C9712A6995050",                   // NFT 合约地址
+                    identifierOrCriteria: 1,     // tokenId
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
                 }
             ],
             consideration: [
                 {
-                    itemType: 0,
-                    token: "0x0000000000000000000000000000000000000000",
-                    identifierOrCriteria: 0,
-                    startAmount: '9250000000000000',
-                    endAmount: '9250000000000000',
-                    recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",
+                    itemType: 0,    // 0: ETH  1: ERC20
+                    token: "0x0000000000000000000000000000000000000000",     // 合约地址， ETH为零地址，ERC20是合约地址
+                    identifierOrCriteria: 0,                                 // 如果itemType是0或1该属性被忽略，写0即可
+                    startAmount: '925000000000000',                          // 卖家实际收到的钱
+                    endAmount: '925000000000000',
+                    recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",  // 收款地址
                 },
                 {
                     itemType: 0,
                     token: "0x0000000000000000000000000000000000000000",
                     identifierOrCriteria: 0,
-                    startAmount: '250000000000000',
-                    endAmount: '250000000000000',
-                    recipient: "0x00EE50f5CD1560aA685432BC91Fc872B274d19a2"
+                    startAmount: '25000000000000',                         // 平台手续费
+                    endAmount: '25000000000000',
+                    recipient: "0x00EE50f5CD1560aA685432BC91Fc872B274d19a2"     // 平台收款
                 },
                 {
                     itemType: 0,
                     token: "0x0000000000000000000000000000000000000000",
                     identifierOrCriteria: 0,
-                    startAmount: '500000000000000',
-                    endAmount: '500000000000000',
-                    recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492"
+                    startAmount: '50000000000000',                         // 版权费
+                    endAmount: '50000000000000',
+                    recipient: "0x5f7a144D7fa67306c4B6a4B77632eE080e5f02d0"   // 版权费收款地址
                 }
             ],
-            startTime: "1665557877",
-            endTime: "1668236277",
-            orderType: 0,   // FULL_OPEN
-            zone: "0x0000000000000000000000000000000000000000",
-            zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",
-            salt: "",
-            counter: 0
+            startTime: "1665557877",         // 挂单开始时间
+            endTime: "1668236277",           // 挂单结束时间
+            orderType: 0,                    // 0: ERC721 (FULL_OPEN)  1: ERC1155（PARTIAL_OPEN）
+            zone: "0x0000000000000000000000000000000000000000",  // 辅助地址 零地址即可
+            zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",   // 32 字节的零值
+            salt: "",        // 77位随机数字
+            counter: 0        // 与offerer的counter相同，初始值0   // 通过seaport合约的getCounter(address offerer)  获取
         }
     },
 
