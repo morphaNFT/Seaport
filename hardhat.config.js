@@ -6,23 +6,16 @@ const config = require("./config.json")
 
 module.exports = {
   networks: {
-    xsc_test: {
-      url: `https://testnet1.xtvip.top`,
-      accounts: [`0x${config.common.privateKey}`, `0x${config.common.privateKey_92Fa}`]
-    },
-    mumbai: {
-      url: `https://polygontestapi.terminet.io/rpc`,
-      accounts: [`0x${config.common.privateKey}`, `0x${config.common.privateKey_92Fa}`]
-    },
-    xsc_maint: {
-      url: `https://datarpc3.xsc.pub`,
+    sepolia: {
+      url: `https://sepolia.infura.io/v3/a79783854b0f446a8a74e513996a58d7`,
       accounts: [`0x${config.common.privateKey}`,`0x${config.common.privateKey_92Fa}`, `0x${config.common.privateKey_19a2}`],
       gas: 6000000
     },
-    goerli: {
-      url: `https://goerli.infura.io/v3/a79783854b0f446a8a74e513996a58d7`,
-      accounts: [`0x${config.common.privateKey}`,`0x${config.common.privateKey_92Fa}`]
-    }
+    morph: {
+      url: `https://rpc-testnet.morphl2.io`,
+      accounts: [`0x${config.common.privateKey}`,`0x${config.common.privateKey_92Fa}`, `0x${config.common.privateKey_19a2}`],
+      gas: 6000000
+    },
   },
   solidity: {
     compilers: [
