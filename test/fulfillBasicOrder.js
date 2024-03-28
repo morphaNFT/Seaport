@@ -35,12 +35,13 @@ describe("【【seaport contract test 721】】", function () {
             // fulfillBasicOrder方法inputData
             const inputData = fulfillBasicOrder(offerData, salt, signature, networkData.conduitKey)
             console.log("inputData", inputData)
-            const options = {value: offerData.price}
+            const options = {value: offerData.price, gasLimit: 500000}
             console.log("options",options)
             const buySignerContract = new Contract(networkData.seaport, abi, buySigner)
             const result = await buySignerContract.fulfillBasicOrder(inputData, options);
+            // 交易哈希
+            console.log('Transaction hash:', result.hash);
             await result.wait()
-            console.log("result", result.hash)
             //  断言nft新的owner是否与购买者一致
             const newOwner = await contractWithSigner.ownerOf(offerData.offer[0].identifierOrCriteria)
             expect(newOwner.toUpperCase()).to.equal((await buySigner.getAddress()).toUpperCase())

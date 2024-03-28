@@ -27,3 +27,8 @@
 ```shell
  npx hardhat run scripts/seaport.js --network sepolia
 ```
+
+## 测试
+```shell
+npx hardhat test test/fulfillBasicOrder.js  --network sepolia
+```

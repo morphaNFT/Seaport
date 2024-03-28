@@ -75,7 +75,7 @@ module.exports = {
                 {
                     itemType: 2,                 // 2: ERC721 3: ERC1155
                     token: "0x8eF5333810401C3A8b930949f41C9712A6995050",                   // NFT 合约地址
-                    identifierOrCriteria: 1,     // tokenId
+                    identifierOrCriteria: 3,     // tokenId
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
                 }
@@ -106,8 +106,8 @@ module.exports = {
                     recipient: "0x5f7a144D7fa67306c4B6a4B77632eE080e5f02d0"   // 版权费收款地址
                 }
             ],
-            startTime: "1665557877",         // 挂单开始时间
-            endTime: "1668236277",           // 挂单结束时间
+            startTime: "1711515439",         // 挂单开始时间
+            endTime: "1714273797",           // 挂单结束时间
             orderType: 0,                    // 0: ERC721 (FULL_OPEN)  1: ERC1155（PARTIAL_OPEN）
             zone: "0x0000000000000000000000000000000000000000",  // 辅助地址 零地址即可
             zoneHash: "0x0000000000000000000000000000000000000000000000000000000000000000",   // 32 字节的零值
