@@ -6,7 +6,7 @@ const {abi} = require("../artifacts/contracts/Seaport.sol/Seaport.json")
 const config = require("../config.json")
 
 
-
+//  单个721交易
 describe("【【seaport contract test 721】】", function () {
     describe("fulfillBasicOrder", function () {
         it("fulfillBasicOrder true", async function () {

@@ -32,3 +32,11 @@
 ```shell
 npx hardhat test test/fulfillBasicOrder.js  --network sepolia
 ```
+## 合约验证
+- 0x75ddBD443EaA8150f75411896bE1e3C834935Ac7 验证的合约
+- 0x4d6c551fF60d09898d392aCef52b55834fb4a056 构造参数
+- 部署合约的初始化参数，可以为多个，使用空格分隔，字符串使用""包裹
+- npx hardhat verify --network 网络名 合约地址 参数1 参数2 参数3 …… （没有参数就不写）
+```shell
+npx hardhat verify --network sepolia 0x75ddBD443EaA8150f75411896bE1e3C834935Ac7 0x4d6c551fF60d09898d392aCef52b55834fb4a056
+```
