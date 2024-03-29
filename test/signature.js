@@ -75,7 +75,7 @@ module.exports = {
                 {
                     itemType: 2,                 // 2: ERC721 3: ERC1155
                     token: "0x8eF5333810401C3A8b930949f41C9712A6995050",                   // NFT 合约地址
-                    identifierOrCriteria: 7,     // tokenId
+                    identifierOrCriteria: 0,     // tokenId
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
                 }
