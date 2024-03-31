@@ -12,7 +12,7 @@ describe("【【fulfillAvailableOrders Test】】", function () {
     describe("fulfillAvailableOrders", function () {
         it("fulfillAvailableOrders true", async function () {
             // 选择网络
-            const networkData = config.seaport_sepolia
+            const networkData = config.seaport_morph
 
             const [sellSigner01, sellSigner02, buySigner] = await ethers.getSigners();
             console.log("sell01Address", await sellSigner01.getAddress())
@@ -29,7 +29,6 @@ describe("【【fulfillAvailableOrders Test】】", function () {
             console.log("SetApprovalForAll 721 txHash：",tx721.hash)
 
             // 交易原始数据Other
-            // const offerDataOther = getOfferData721Other();
             const offerDataOther = getOfferData7212();
             const token = offerDataOther.offer[0].token
             // nft授权approve

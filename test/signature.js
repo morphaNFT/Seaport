@@ -74,37 +74,37 @@ module.exports = {
             offer: [
                 {
                     itemType: 2,                 // 2: ERC721 3: ERC1155
-                    token: "0x8eF5333810401C3A8b930949f41C9712A6995050",                   // NFT 合约地址
-                    identifierOrCriteria: 10,     // tokenId
+                    token: "0x4d6c551fF60d09898d392aCef52b55834fb4a056",                   // NFT 合约地址
+                    identifierOrCriteria: 1,     // tokenId
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
                 }
             ],
             consideration: [
                 {
-                    itemType: 1,    // 0: ETH  1: ERC20
-                    token: "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",     // 合约地址， ETH为零地址，ERC20是合约地址
+                    itemType: 0,    // 0: ETH  1: ERC20
+                    token: "0x0000000000000000000000000000000000000000",     // 合约地址， ETH为零地址，ERC20是合约地址
                     identifierOrCriteria: 0,                                 // 如果itemType是0或1该属性被忽略，写0即可
                     startAmount: '925000000000000',                          // 卖家实际收到的钱
                     endAmount: '925000000000000',
                     recipient: "0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492",  // 收款地址
                 },
                 {
-                    itemType: 1,
-                    token: "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
                     identifierOrCriteria: 0,
-                    startAmount: '75000000000000',                         // 平台手续费
-                    endAmount: '75000000000000',
+                    startAmount: '25000000000000',                         // 平台手续费
+                    endAmount: '25000000000000',
                     recipient: "0x00EE50f5CD1560aA685432BC91Fc872B274d19a2"     // 平台收款
                 },
-                // {
-                //     itemType: 1,
-                //     token: "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",
-                //     identifierOrCriteria: 0,
-                //     startAmount: '50000000000000',                         // 版权费
-                //     endAmount: '50000000000000',
-                //     recipient: "0x5f7a144D7fa67306c4B6a4B77632eE080e5f02d0"   // 版权费收款地址
-                // }
+                {
+                    itemType: 0,
+                    token: "0x0000000000000000000000000000000000000000",
+                    identifierOrCriteria: 0,
+                    startAmount: '50000000000000',                         // 版权费
+                    endAmount: '50000000000000',
+                    recipient: "0x5f7a144D7fa67306c4B6a4B77632eE080e5f02d0"   // 版权费收款地址
+                }
             ],
             startTime: "1711515439",         // 挂单开始时间
             endTime: "1714273797",           // 挂单结束时间
@@ -123,8 +123,8 @@ module.exports = {
             offer: [
                 {
                     itemType: 2,                 // 2: ERC721 3: ERC1155
-                    token: "0x5FF5cdFE8b5D92619Adffac7684627Cd8FF0fe55",                   // NFT 合约地址
-                    identifierOrCriteria: 3,     // tokenId
+                    token: "0xB221E89BaE78fCdaed90F07894A267FD39Dab3b3",                   // NFT 合约地址
+                    identifierOrCriteria: 0,     // tokenId
                     startAmount: 1,              // 数量
                     endAmount: 1                 // 数量
                 }
@@ -229,7 +229,7 @@ module.exports = {
         return {
             "additionalRecipients": additionalRecipients,
             // "basicOrderType": offerData.orderType,
-            "basicOrderType": 8,   //  ETH_TO_ERC721: 0 ,ERC20_TO_ERC721: 8
+            "basicOrderType": 0,   //  ETH_TO_ERC721: 0 ,ERC20_TO_ERC721: 8
             "considerationAmount": offerData.consideration[0].startAmount,
             "considerationIdentifier": offerData.consideration[0].identifierOrCriteria,
             "considerationToken": offerData.consideration[0].token,
@@ -537,19 +537,13 @@ module.exports = {
                         "itemIndex": 2
                     },
                 ],
+                // 0x247098dFFc21a8A6A6A62d1461C36B54b1db92Fa（卖家2）接收的eth 在consideration中的位置
                 [
                     {
                         "orderIndex": 1,
                         "itemIndex": 0
                     }
                 ]
-                // 0x247098dFFc21a8A6A6A62d1461C36B54b1db92Fa（卖家2）接收的eth 在consideration中的位置
-                // [
-                //     {
-                //         "orderIndex": 1,
-                //         "itemIndex": 0
-                //     }
-                // ]
             ],
             "fulfillerConduitKey": conduitKey,
             "maximumFulfilled": "2"    // 表示最多要执行多少个订单

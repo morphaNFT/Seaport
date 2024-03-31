@@ -12,7 +12,7 @@ describe("【【seaport contract test 721】】", function () {
     describe("fulfillBasicOrder", function () {
         it("fulfillBasicOrder true", async function () {
             // 选择网络
-            const networkData = config.seaport_sepolia
+            const networkData = config.seaport_morph
 
             const [sellSigner, buySigner] = await ethers.getSigners();
             console.log("sellAddress", await sellSigner.getAddress())
@@ -44,8 +44,8 @@ describe("【【seaport contract test 721】】", function () {
             // fulfillBasicOrder方法inputData
             const inputData = fulfillBasicOrder(offerData, salt, signature, networkData.conduitKey)
             console.log("inputData", inputData)
-            // const options = {value: offerData.price, gasLimit: 500000}
-            const options = {gasLimit: 500000}
+            const options = {value: offerData.price, gasLimit: 500000}
+            // const options = {gasLimit: 500000}
             console.log("options",options)
             const buySignerContract = new Contract(networkData.seaport, abi, buySigner)
             const result = await buySignerContract.fulfillBasicOrder(inputData, options);

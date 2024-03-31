@@ -11,7 +11,7 @@ describe("【Order cancel test】", function () {
     describe("cancel", function () {
         it("cancel true", async function () {
             // 选择网络
-            const networkData = config.seaport_sepolia
+            const networkData = config.seaport_morph
 
             const [sellSigner] = await ethers.getSigners();
             console.log("sellAddress", await sellSigner.getAddress())
