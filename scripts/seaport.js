@@ -3,7 +3,7 @@ async function main() {
     console.log("【networkId】:",netWork.chainId)
 
     const [deployer] = await ethers.getSigners();
-    console.log("【account】:", await deployer.getAddress());
+    console.log("【deployer】:", await deployer.getAddress());
 
     // deploy ConduitController contract
     const ConduitControllerContract = await ethers.getContractFactory("ConduitController");
@@ -17,7 +17,7 @@ async function main() {
     const initialOwner = await deployer.getAddress()
     await ConduitController.createConduit(conduitKey, initialOwner)
     const conduitAddress = await ConduitController.getConduit(conduitKey);
-    console.log("【conduit】:", conduitAddress[0])
+    console.log("【conduitAddress】:", conduitAddress[0])
 
     // deploy Seaport contract
     const seaportContract = await ethers.getContractFactory("Seaport");
