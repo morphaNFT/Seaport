@@ -1,12 +1,12 @@
-## 准备环境
-安装node.js
+## Prepare the environment
+install  node.js
 
-## 安装依赖
+## Install dependencies
 ```shell
 npm install
 ```
-## 私钥配置
-将私钥配置在config.js文件中的privateKey中
+## Private key configuration
+Configure the private key in the privateKey of the config. js file
 ```json
 {
   "common": {
@@ -14,23 +14,26 @@ npm install
   }
 }
 ```
-## 配置区块链地址
-在hardhat.config.js配置文件中,将要部署的网络地址写在url这里
+## Configure blockchain address
+In the hardhat.comnfig.js configuration file, write the network address to be deployed here in the URL
+Replace the following URL with the node address to be deployed
+for example:
 ```js
 networks: {
     morph: {
-      url: `https://rpc-holesky.morphl2.io`,
+      url: `https://rpc-quicknode-holesky.morphl2.io`,
       accounts: [`0x${config.common.privateKey}`]
     }
 }
 ```
 
-## 开始部署
+## Start deployment
 ```shell
  npx hardhat run scripts/seaport.js --network morph
 ```
-控制台将输出如下类似信息：其中ConduitController 可保存后续使用，conduitKey，conduitAddress，seaport信息交由前后端使用。
-
+The console will output similar information as follows: ConduitController can be saved for future use, 
+and ConduitKey, ConduitAddress, and Seaport information will be handed over to the front-end and back-end for use。
+for example:
 ```shell
 【ConduitController】: 0x9465E3d83365646656d94a90c55506994aFc9542
 【conduitKey 】: 0x8A8ee995FcE4E30Ecf6627a9D06409766d4d1492000000000000000000000000
